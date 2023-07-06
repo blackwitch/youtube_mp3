@@ -4,7 +4,7 @@ import youtube_dl
 
 DOWNLOAD_PATH = os.getcwd()
 
-def download_and_convert_to_mp3(url, type, start_time='', end_time=''):
+def download_and_convert(url, type, start_time='', end_time=''):
     if type == "mp3":
         # mp3 다운로드 설정
         ydl_opts = {
@@ -51,7 +51,7 @@ start_time = '00:01:35'  # 시작 시간 (예: 10초)
 end_time = '00:00:05'  # 끝 시간 (예: 15초)
 
 # mp3 음악 다운로드 시 
-# download_and_convert_to_mp3(url, "mp3") # type = mp3, mp4
+# download_and_convert(url, "mp3") # type = mp3, mp4
 
 # mp4 영상 다운로드 시
-download_and_convert_to_mp3(url, "mp4", start_time, end_time)
+download_and_convert(url, "mp4", start_time, end_time)
