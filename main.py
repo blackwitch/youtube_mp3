@@ -1,6 +1,7 @@
 import os
 import ffmpeg
-import youtube_dl
+# import youtube_dl
+from yt_dlp import YoutubeDL
 
 DOWNLOAD_PATH = os.getcwd()
 
@@ -27,7 +28,7 @@ def download_and_convert(url, type, start_time='', end_time=''):
         }
 
     # YouTube 영상 잘라서 다운로드, 음성도 가능
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+    with YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(url, download=False)
         video_url = info_dict.get('url', None)
         title = info_dict.get('title', None)
@@ -46,12 +47,12 @@ def download_and_convert(url, type, start_time='', end_time=''):
 
     print(f'Successfully downloaded and converted to MP3: {output_file}')    
 
-url = 'https://www.youtube.com/watch?v=UBURTj20HXI'
-start_time = '00:01:35'  # 시작 시간 (예: 10초)
-end_time = '00:00:05'  # 끝 시간 (예: 15초)
+url = 'https://www.youtube.com/watch?v=EIz09kLzN9k'
+start_time = '00:00:00'
+end_time = '00:02:27'
 
 # mp3 음악 다운로드 시 
-# download_and_convert(url, "mp3") # type = mp3, mp4
+download_and_convert(url, "mp3") # type = mp3, mp4
 
 # mp4 영상 다운로드 시
-download_and_convert(url, "mp4", start_time, end_time)
+# download_and_convert(url, "mp4", start_time, end_time)
