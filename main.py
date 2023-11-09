@@ -47,12 +47,12 @@ def download_and_convert(url, type, start_time='', end_time=''):
 
     print(f'Successfully downloaded and converted to MP3: {output_file}')    
 
-url = 'https://www.youtube.com/watch?v=EIz09kLzN9k'
-start_time = '00:00:00'
-end_time = '00:02:27'
+url = 'https://www.youtube.com/shorts/QjsnoBtbPlo'
+# start_time = '00:00:00'
+# end_time = '00:02:27'
 
-# mp3 음악 다운로드 시 
-download_and_convert(url, "mp3") # type = mp3, mp4
+# # mp3 음악 다운로드 시 
+# download_and_convert(url, "mp3") # type = mp3, mp4
 
 # mp4 영상 다운로드 시
-# download_and_convert(url, "mp4", start_time, end_time)
+download_and_convert(url, "mp4", '00:00:03', '00:00:04')
